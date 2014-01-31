@@ -1,0 +1,14 @@
+.col-lg-8.well = @name
+  %button.btn.btn-success.btn-sm.pull-right{"data-target" => "#editModal#{@id}", "data-toggle" => "modal"} Edit
+
+.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", role: "dialog", tabindex: "-1", id: "editModal#{@id}"}
+  .modal-dialog
+    .modal-content
+      .modal-header
+        %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", type: "button"} ×
+        %h4#myModalLabel.modal-title Edit Project
+      .modal-body
+        %input{type: 'text', value: "#{@name}", class:"name"}
+      .modal-footer
+        %button.btn.btn-default{"data-dismiss" => "modal", type: "button"} Close
+        %button.btn.btn-primary.project_save{type: "button","data-dismiss" => "modal"} Save
