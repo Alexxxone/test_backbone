@@ -1,3 +1,19 @@
-.col-lg-8.col-lg-offset-3.projects_box
+.col-lg-6.col-lg-offset-3.projects_box
   %h1 Al projects
+    %button.btn-warning.btn-sm{"data-target" => "#newModal", "data-toggle" => "modal"} New Project
   #project_item
+
+
+
+.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", role: "dialog", tabindex: "-1", id: "newModal"}
+  .modal-dialog
+    .modal-content
+      .modal-header
+        %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", type: "button"} ×
+        %h4#myModalLabel.modal-title New Project
+      .modal-body
+        %input{type: 'text', class:"new_name"}
+      .modal-footer
+        %button.btn.btn-default{"data-dismiss" => "modal", type: "button"} Close
+        %button.btn.btn-primary.new_project{type: "button","data-dismiss" => "modal"} Save
+

@@ -9,8 +9,11 @@ define [
     autoRender: true
     initialize: ->
       @delegate 'click', '.project_save', @update_project
-      @listenTo @model, 'change:name', @render
+      @delegate 'click', '.delete_project', @delete_project
+      @listenTo @model, 'change', @render
     update_project: ->
       name = $(@.el).find('.name').val()
       @model.set({name: name})
       @model.save({wait: true})
+    delete_project: ->
+      @model.destroy()

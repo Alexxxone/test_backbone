@@ -1,5 +1,6 @@
 .col-lg-8.well = @name
   %button.btn.btn-success.btn-sm.pull-right{"data-target" => "#editModal#{@id}", "data-toggle" => "modal"} Edit
+  %button.btn.btn-danger.btn-sm.pull-right.delete_project Delete
 
 .modal.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", role: "dialog", tabindex: "-1", id: "editModal#{@id}"}
   .modal-dialog
