@@ -25,7 +25,7 @@ config/database.yml
 log
 
 .ruby-gemset
-
+*~
 .ruby-version
 
 app/assets/.DS_Store

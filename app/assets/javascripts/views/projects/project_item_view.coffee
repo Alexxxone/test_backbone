@@ -14,6 +14,8 @@ define [
     update_project: ->
       name = $(@.el).find('.name').val()
       @model.set({name: name})
-      @model.save({wait: true})
+      @model.save({wait: true}).then =>
+        @$("#editModal").modal('hide')
+        console.log @$("#editModal*")
     delete_project: ->
       @model.destroy()

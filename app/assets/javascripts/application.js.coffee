@@ -1,3 +1,7 @@
+# Require HAML Coffee templates
+#= require hamlcoffee
+#= require_tree ./templates
+
 require [
   'test_app'
   'routes'
