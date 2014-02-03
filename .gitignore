@@ -22,7 +22,10 @@ public/assets/*
 app/.DS_Store
 test
 config/database.yml
+log
+
 .ruby-gemset
+
 .ruby-version
 
 app/assets/.DS_Store
