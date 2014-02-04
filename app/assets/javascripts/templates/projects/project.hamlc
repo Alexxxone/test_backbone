@@ -1,15 +1,13 @@
-.col-lg-8.well = @name
-  %button.btn.btn-success.btn-sm.pull-right{"data-target" => "#editModal", "data-toggle" => "modal"} Edit
-  %button.btn.btn-danger.btn-sm.pull-right.delete_project Delete
+.col-lg-12.well
+  %p
+    = @name
+    %button.btn.btn-success.btn-sm.pull-right.open_edit_box Edit
+    %button.btn.btn-danger.btn-sm.pull-right.delete_project Delete
+  %br
+  %blockquote = @created_at
 
-.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", role: "dialog", tabindex: "-1", id: "editModal"}
-  .modal-dialog
-    .modal-content
-      .modal-header
-        %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", type: "button"} ×
-        %h4#myModalLabel.modal-title Edit Project
-      .modal-body
-        %input{type: 'text', value: "#{@name}", class:"name"}
-      .modal-footer
-        %button.btn.btn-default{"data-dismiss" => "modal", type: "button"} Close
-        %button.btn.btn-primary.project_save{type: "button"} Save
+  .input-group.hide{style: 'transition: 2s;-webkit-transition: 2s;'}
+    %input{type: 'text', value: "#{@name}", class:"name form-control"}
+    %span.input-group-btn
+      %button.btn.btn-default.cancel Close
+      %button.btn.btn-primary.project_save{type: "button"} Update

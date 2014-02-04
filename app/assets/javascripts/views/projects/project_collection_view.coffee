@@ -14,15 +14,18 @@ define [
     container: '#container'
     autoRender: true
     initialize: ->
+
       super
       @listenTo @collection, 'reset', @render
       @delegate 'click', '.new_project', @new_project
     new_project: ->
-      name = @$('.new_name').val()
-      project = new Project( name: name)
-      project.save(wait: true, {success :@saved, error: @new_error}).then =>
-        @collection.add(project)
-    saved: ->
+      that = @
+      project = new Project( name:  @$('.new_name').val())
+      project.save(wait: true, {success: () ->
+        that.saved()
+        that.collection.fetch()
+      , error: @new_error})
+    saved:->
       alert = new AlertModel()
       new Alert(model: alert)
     new_error: ->

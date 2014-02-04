@@ -5,5 +5,5 @@ define [
   'use strict'
 
   class Project extends Model
-    url: '/projects/'
+    url: '/projects/:id'
 
