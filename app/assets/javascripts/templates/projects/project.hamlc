@@ -6,7 +6,7 @@
   %br
   %blockquote = @created_at
 
-  .input-group.hide{style: 'transition: 2s;-webkit-transition: 2s;'}
+  .input-group.hide
     %input{type: 'text', value: "#{@name}", class:"name form-control"}
     %span.input-group-btn
       %button.btn.btn-default.cancel Close
