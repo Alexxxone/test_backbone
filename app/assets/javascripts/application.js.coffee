@@ -12,3 +12,4 @@ require [
   new TestApp
     title: 'TestApp'
     routes: routes
+    csrfToken: $("meta[name='csrf-token']").attr('content')

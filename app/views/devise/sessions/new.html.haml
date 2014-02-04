@@ -1,0 +1,22 @@
+.col-lg-4.col-lg-offset-4.well{style:'margin-top:150px'}
+  = form_for(resource, :as => resource_name, :url => session_path(resource_name),class:'form-horizontal') do |f|
+    %fieldset
+      %legend
+        %h2 Please Sign In
+      .form-group
+        = f.label :email,class: 'col-lg-2 control-label'
+        .col-lg-10
+          = f.email_field :email,class: 'form-control',placeholder:'Email'
+      .form-group
+        = f.label :password,class: 'col-lg-2 control-label'
+        .col-lg-10
+          = f.password_field :password,class: 'form-control',placeholder:'Password'
+      - if devise_mapping.rememberable?
+        %br
+        .form-group
+          = f.label :remember_me,class:'col-lg-3'
+          = f.check_box :remember_me
+      .form-group
+        = f.submit "Sign in", class: 'btn btn-primary form-control'
+
+  = render :partial => "devise/shared/links"

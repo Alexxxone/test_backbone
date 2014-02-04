@@ -1,6 +1,8 @@
 define [
   'views/base/view'
-], (View) ->
+  'views/alerts/alert_view'
+  'models/alert/alert'
+], (View, Alert, AlertModel) ->
   'use strict'
 
   class ProjectView extends View
@@ -17,11 +19,13 @@ define [
       name = $(@.el).find('.name').val()
       @model.set({name: name})
       @model.save()
+      alert = new AlertModel(type: 'success', text: 'Project Was Successfully Updated!')
+      new Alert(model: alert)
     delete_project: ->
-      console.log '@model'
-      console.log @model
       that = @
       @$('.col-lg-12.well').slideUp 'slow', () ->
+        alert = new AlertModel(type: 'warning', text: 'Project Was Successfully Deletet!')
+        new Alert(model: alert)
         that.model.destroy()
     toggle_edit_box: ->
       @$('.input-group').toggleClass('hide')

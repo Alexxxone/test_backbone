@@ -6,3 +6,9 @@ define ->
   (match) ->
 
     match '', 'project#index'
+    match 'users', 'project#users'
+    match 'users/:id', 'project#show_user'
+    urlPath: ->
+      "/users"
+      "/users/#{@get('id')}"
+      ""

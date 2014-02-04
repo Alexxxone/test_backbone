@@ -11,10 +11,9 @@ define [
     templateName: 'projects/projects'
     itemView: ItemView
     listSelector: '#project_item'
-    container: '#container'
+    region: 'main'
     autoRender: true
     initialize: ->
-
       super
       @listenTo @collection, 'reset', @render
       @delegate 'click', '.new_project', @new_project

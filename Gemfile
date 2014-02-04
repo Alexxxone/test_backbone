@@ -8,6 +8,7 @@ gem 'thin'
 
 gem 'haml'
 
+gem 'devise'
 #gem 'jquery-rails'
 
 # Needs to be outside of assets group because it’s needed in production

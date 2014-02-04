@@ -1,0 +1,9 @@
+%ul.nav.nav-pills.nav-stacked.left_menu
+  %li.menu_main_page
+    %a{href: "javascript:;"}
+      %i.fa.fa-home.fa-fw
+      My Projects
+  %li.menu_users
+    %a{href: "javascript:;"}
+      %i.fa.fa-cogs.fa-fw
+      Users

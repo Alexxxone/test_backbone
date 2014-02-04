@@ -1,4 +1,4 @@
-.col-lg-6.col-lg-offset-3.projects_box
+.projects_box
   %h1 Al projects
     %button.btn-warning.btn-sm{"data-target" => "#newModal", "data-toggle" => "modal"} New Project
   #project_item
