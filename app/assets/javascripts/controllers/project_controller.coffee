@@ -46,8 +46,8 @@ define [
       @collection2.fetch()
     show_user: (params) ->
 
-      @model = new UserModel({id:params.id })
+      @model = new UserModel({id: params.id })
 
       new UserView model: @model, region: 'main'
-      @model.fetch()
+      @model.fetch({id: params.id })
       console.log @model
