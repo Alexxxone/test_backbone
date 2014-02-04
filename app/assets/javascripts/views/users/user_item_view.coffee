@@ -4,7 +4,7 @@ define [
 ], (View,utils) ->
   'use strict'
 
-  class ProjectView extends View
+  class UserView extends View
     templateName: 'users/user'
     tag: false
     autoRender: true

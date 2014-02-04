@@ -13,3 +13,4 @@ define [
     initialize: ->
       super
       @listenTo @collection, 'reset', @render
+

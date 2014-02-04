@@ -3,12 +3,13 @@ define [
   'models/projects'
   'views/projects/project_collection_view'
   'views/main/menu-view'
-  'views/users/users_collection_view'
   'models/users/users'
+  'views/users/users_collection_view'
   'models/init'
   'views/main/site-view'
   'models/users/user'
-], (Controller, Projects, ProjectCollectionView, MenuView, UsersView, UserCollection,Init,SiteView,UserModel) ->
+  'views/users/user_item_view'
+], (Controller, Projects, ProjectCollectionView, MenuView, UserCollection,UserCollectionView,Init,SiteView,UserModel,UserView) ->
   'use strict'
 
   class ProjectController extends Controller
@@ -31,7 +32,7 @@ define [
       @view = new ProjectCollectionView collection: @collection, region: 'main'
       @collection.fetch()
       @collection2 = new UserCollection()
-      new UsersView collection: @collection2, region: 'users'
+      new UserCollectionView collection: @collection2, region: 'users'
       @collection2.fetch()
 
     users: ()->
@@ -41,9 +42,12 @@ define [
       @view = new ProjectCollectionView collection: @collection, region: 'users'
       @collection.fetch()
       @collection2 = new UserCollection()
-      @view2 = new UsersView collection: @collection2, region: 'main'
+      @view2 = new UserCollectionView collection: @collection2, region: 'main'
       @collection2.fetch()
     show_user: (params) ->
-      console.log params.id
+
       @model = new UserModel({id:params.id })
-      new UsersView model: @model, redion: 'main'
+
+      new UserView model: @model, region: 'main'
+      @model.fetch()
+      console.log @model
