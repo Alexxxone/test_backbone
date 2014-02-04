@@ -5,4 +5,4 @@ define [
   'use strict'
 
   class User extends Model
-    url: '/users/:id'
+    urlRoot:'/users'

@@ -1,1 +1,1 @@
-rvm use --create 1.9.3-p362@rails_chaplin
+rvm use --create 2.0.0-p247@rails_chaplin

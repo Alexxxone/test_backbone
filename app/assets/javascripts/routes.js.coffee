@@ -7,8 +7,4 @@ define ->
 
     match '', 'project#index'
     match 'users', 'project#users'
-    match 'users/:id', 'project#show_user'
-    urlPath: ->
-      "/users"
-      "/users/#{@get('id')}"
-      ""
+    match 'users/:id', {controller: 'project', action: 'show_user' }

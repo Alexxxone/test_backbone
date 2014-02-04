@@ -1,12 +1,18 @@
 class UsersController < ApplicationController
-  respond_to  :json
+  respond_to  :json, :html
   def index
    @users = User.order('email ASC').all
-   respond_with @users
+   respond_to do |format|
+     format.html
+     format.json { render json: @users }
+   end
   end
   def show
     @user = User.find(params[:id])
     @projects = @user.projects
-    respond_with @user,@projects
+    respond_to do |format|
+      format.html
+      format.json { render json: @user }
+    end
   end
 end

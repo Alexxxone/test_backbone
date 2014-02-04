@@ -4,7 +4,7 @@ class InitController < ApplicationController
   before_filter :authenticate_user!
   respond_to  :json, :html
   def index
-    @init = User.first
+    @init = current_user
     respond_with @init
   end
 
