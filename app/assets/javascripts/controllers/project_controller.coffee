@@ -15,11 +15,7 @@ define [
   class ProjectController extends Controller
     beforeAction: ->
       super
-      console.log 'before'
       $('.left_menu li').removeClass('active')
-      @model =  new Init
-      @compose 'site', SiteView , model: @model
-      @compose 'menu', MenuView, region: 'menu'
 
     title: 'Project'
 

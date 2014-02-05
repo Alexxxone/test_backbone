@@ -8,10 +8,9 @@ define [
     region: 'menu'
     templateName: 'main/menu'
     initialize: ->
-      console.log 'menu VIEW'
       @delegate 'click', '.menu_main_page', @home
-      @delegate 'click', '.menu_users', @settings
+      @delegate 'click', '.menu_users', @users
     home: ->
       utils.redirectTo url: '/'
-    settings: ->
+    users: ->
       utils.redirectTo url: '/users'

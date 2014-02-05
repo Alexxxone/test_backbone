@@ -14,6 +14,8 @@ define [
       users: '#user-container'
     templateName: 'main/site'
     initialize: ->
-      @model.fetch
+      console.log 'site view'
+      @model.fetch()
         success: (res)->
+          console.log res
           $('.user_email').text(res.get('email'))

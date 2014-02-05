@@ -5,5 +5,5 @@ define [
   'use strict'
 
   class Users extends Collection
-    url: '/users/'
+    url: '/users'
 
