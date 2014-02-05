@@ -31,7 +31,6 @@
           %a{href: "javascript:;", class:'user_email'}
         %li
           %a{'data-method' => 'delete', href: '/users/sign_out', rel: 'nofollow'} Sign out
-
 .row-fluid{style:'margin-top:50px'}
   .col-lg-2
     #menu-container

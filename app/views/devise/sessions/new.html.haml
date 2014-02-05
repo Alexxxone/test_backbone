@@ -6,11 +6,11 @@
       .form-group
         = f.label :email,class: 'col-lg-2 control-label'
         .col-lg-10
-          = f.email_field :email,class: 'form-control',placeholder:'Email'
+          = f.email_field :email,class: 'form-control',placeholder:'Email',value: 'b@mail.ru'
       .form-group
         = f.label :password,class: 'col-lg-2 control-label'
         .col-lg-10
-          = f.password_field :password,class: 'form-control',placeholder:'Password'
+          = f.password_field :password,class: 'form-control',placeholder:'Password',value: '12345678'
       - if devise_mapping.rememberable?
         %br
         .form-group
@@ -18,5 +18,5 @@
           = f.check_box :remember_me
       .form-group
         = f.submit "Sign in", class: 'btn btn-primary form-control'
-
   = render 'links'
+= javascript_include_tag :common
