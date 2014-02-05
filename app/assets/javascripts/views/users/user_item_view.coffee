@@ -15,4 +15,4 @@ define [
           that.render()
       @delegate 'click', '.col-lg-12.well', @show
     show:->
-      utils.redirectTo url: "/users/#{@model.id}"
+      utils.redirectTo url: "/people/#{@model.id}"

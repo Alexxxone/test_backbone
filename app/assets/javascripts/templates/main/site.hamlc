@@ -29,6 +29,9 @@
       %ul.nav.navbar-nav.navbar-right
         %li
           %a{href: "javascript:;", class:'user_email'}
+        %li
+          %a{'data-method' => 'delete', href: '/users/sign_out', rel: 'nofollow'} Sign out
+
 .row{style:'margin-top:50px'}
   .col-lg-3
     #menu-container

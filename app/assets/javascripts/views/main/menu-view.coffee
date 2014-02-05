@@ -13,4 +13,4 @@ define [
     home: ->
       utils.redirectTo url: '/'
     users: ->
-      utils.redirectTo url: '/users'
+      utils.redirectTo url: '/people'
