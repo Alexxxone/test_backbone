@@ -7,4 +7,5 @@ define ->
 
     match '', 'project#index'
     match 'users', 'project#users'
-    match 'users/:id', {controller: 'project', action: 'show_user' }
+    match 'users/:id', {controller: 'project', action: 'show_user' , constraints: {id: /^\d+$/} }
+
