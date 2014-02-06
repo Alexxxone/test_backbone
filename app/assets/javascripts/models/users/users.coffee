@@ -7,3 +7,5 @@ define [
   class Users extends Collection
     url: '/people'
 
+
+

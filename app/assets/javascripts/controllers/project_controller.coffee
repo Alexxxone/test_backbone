@@ -30,7 +30,6 @@ define [
       @collection2 = new UserCollection()
       new UserCollectionView collection: @collection2, region: 'users'
       @collection2.fetch()
-
     users: ()->
       $('.menu_users').addClass('active')
       @collection = new Projects()
@@ -41,5 +40,10 @@ define [
       @collection2.fetch()
     show_user: (params) ->
       $('.menu_users').addClass('active')
-      @model = new UserModel({id: params.id })
-      @view = new UserView model: @model, region: 'main'
+      @model = new UserModel(id: params.id )
+      @model.fetch
+        success: (resp)->
+          new UserView model: resp, region: 'main'
+          collection = new Projects()
+          collection.push(resp.projects)
+          new ProjectCollectionView collection: collection , region: 'users'

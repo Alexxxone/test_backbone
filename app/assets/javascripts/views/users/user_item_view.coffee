@@ -7,12 +7,8 @@ define [
   class UserView extends View
     templateName: 'users/user'
     tag: false
-    autoRender: false
+    autoRender: true
     initialize: ->
-      that = @
-      @model.fetch
-        success: ->
-          that.render()
       @delegate 'click', '.col-lg-12.well', @show
     show:->
       utils.redirectTo url: "/people/#{@model.id}"

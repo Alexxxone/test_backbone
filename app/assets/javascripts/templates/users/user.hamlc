@@ -1,5 +1,7 @@
 .col-lg-12.well
   %p
     = @email
+  %p
+    = @id
   %br
   %blockquote = @created_at
